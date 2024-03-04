@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pickbazar | Books</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Alatsi&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-white m-0 p-0">
+
+    <!-- navbar start -->
+    <nav class="w-full">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="home.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <img src="/Assets/Logo-new.png" class="h-6" alt="Logo">
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+                    class="text-white lg:block hidden font-medium rounded-lg text-sm px-4 py-2.5 text-center bg-emerald-500 hover:bg-emerald-600 "
+                    type="button">
+                    Join
+                </button>
+                <div id="authentication-modal" tabindex="-1" aria-hidden="true"
+                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                    <div class="relative p-4 w-full max-w-md max-h-full">
+                        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                            <div
+                                class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                                    Sign in to our platform
+                                </h3>
+                                <button type="button"
+                                    class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                    data-modal-hide="authentication-modal">
+                                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 14 14">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                                    </svg>
+                                    <span class="sr-only">Close modal</span>
+                                </button>
+                            </div>
+                            <div class="p-4 md:p-5">
+                                <form class="space-y-4" action="#">
+                                    <div>
+                                        <label for="email"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                            email</label>
+                                        <input type="email" name="email" id="email"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            placeholder="name@company.com" required />
+                                    </div>
+                                    <div>
+                                        <label for="password"
+                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                            password</label>
+                                        <input type="password" name="password" id="password" placeholder="••••••••"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                            required />
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <div class="flex items-start">
+                                            <div class="flex items-center h-5">
+                                                <input id="remember" type="checkbox" value=""
+                                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                                    required />
+                                            </div>
+                                            <label for="remember"
+                                                class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                                me</label>
+                                        </div>
+                                        <a href="#"
+                                            class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost
+                                            Password?</a>
+                                    </div>
+                                    <button type="submit"
+                                        class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
+                                        to your account</button>
+                                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">Don't have any
+                                        account? <a href="#" data-modal-target="crud-modal"
+                                            data-modal-toggle="crud-modal"
+                                            class="text-blue-700 hover:underline dark:text-blue-500">Register
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>&nbsp;
+                <button type="button">
+                    <a href="Login/Regsiter.html" target="_blank"
+                        class="text-white font-medium rounded-lg text-sm px-4 py-2.5 text-center bg-emerald-500 hover:bg-emerald-600 ">
+                        Become a Seller
+                    </a>
+                </button>
+
+                <button data-collapse-toggle="navbar-sticky" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium  rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-500 md:p-0 "
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-500 md:p-0 ">About</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-500 md:p-0 ">Services</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-emerald-500 md:p-0 ">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar end -->
+
+    <!--  -->
+    <div class="bg-slate-200 mx-auto max-w-full text-center py-24">
+        <h4 class="lg:text-4xl text-3xl font-bold ">FAQs</h4>
+        <li class="inline-flex items-center my-5">
+            <a href="/public/home.html" class="inline-flex items-center text-[14px] text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-3 h-3 me-1 justify-center items-center">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+                </svg>
+
+                Home
+            </a>&nbsp;&nbsp;
+            <a href="FAQs.html" class="inline-flex cursor-text items-center text-[14px] text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-3 h-3 me-1 justify-center items-center">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+
+                FAQs
+            </a>
+        </li>
+    </div>
+    <!--  -->
+
+
+
+    <!-- footer -->
+    <section class=" py-20 text-center">
+        <div class="mx-auto max-w-full px-6 sm:px-8 md:px-12">
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <div class="grid1-item">
+
+                    <div class="w-max text-left ms-5">
+                        <ul>
+                            <li class="w-32 mb-8">
+                                <a href="home.html">
+                                    <img src="/Assets/Logo-new.png" alt="">
+                                </a>
+                            </li>
+                            <li class="text-black text-sm my-6">
+                                <a
+                                    href="https://www.google.com/maps/place/NY+State+Thruway,+New+York,+NY,+USA/@40.9140691,-73.8736255,17z/data=!3m1!4b1!4m6!3m5!1s0x89d00c49304ee3d5:0xf9273bccd0945be2!8m2!3d40.9140691!4d-73.8736255!16zL20vMDJ5cV9n?entry=ttu">
+                                    <p>NY State Thruway, New York, USA</p>
+                                </a>
+                            </li>
+                            <li class="text-slate-700 text-sm">
+                                <a href="">
+                                    demo@Demo.com
+                                </a>
+                                <br>
+                                <a href="">
+                                    +129290122122
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm">
+                                <a href="https://www.facebook.com/redqinc" target="_blank"
+                                    class="hover:text-orange-500 text-emerald-500">
+                                    <i class="fa-brands fa-xl ms-0 fa-facebook"></i>
+                                </a>
+                                <a href="https://twitter.com/RedqTeam" target="_blank"
+                                    class="hover:text-orange-500 text-emerald-500">
+                                    <i class="fa-brands fa-xl ms-2 fa-twitter"></i>
+                                </a>
+                                <a href="https://www.instagram.com/redqteam/" target="_blank"
+                                    class="hover:text-orange-500 text-emerald-500">
+                                    <i class="fa-brands fa-xl ms-2 fa-instagram"></i>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="grid1-item">
+
+                    <div class="w-max text-left ms-5">
+                        <ul>
+                            <li class="font-semibold text-black mb-6">
+                                Explore
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="pages/Shops.html">
+                                    Shops
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="pages/Authors.html">
+                                    Authors
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="pages/Flash-Deals.html">
+                                    Flash Deals
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="pages/Coupons.html">
+                                    Coupon
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="grid1-item">
+
+                    <div class="w-max text-left ms-5">
+                        <ul>
+                            <li class="font-semibold text-black mb-6">
+                                Customer Service
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Services/FAQs.html">
+                                    FAQ & Helps
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Services/Vendor.html">
+                                    Vendor Refund Policies
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Services/Refund.html">
+                                    Customer Refund Policies
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="grid1-item">
+
+                    <div class="w-max text-left ms-5">
+                        <ul>
+                            <li class="font-semibold text-black mb-6">
+                                Our information
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Information/Manu.html">
+                                    Manufactures
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Information/Privacy.html">
+                                    Privacy policies
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Information/Term.html">
+                                    Terms & conditions
+                                </a>
+                            </li>
+                            <li class="my-3 text-slate-700 text-sm hover:text-orange-500">
+                                <a href="Information/Contact.html">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="grid1-item">
+
+                    <div class="w-max text-left ms-5">
+                        <ul>
+                            <li class="font-semibold text-xl text-black mb-6">
+                                Subscribe Now
+                            </li>
+                            <li class="mt-5 mb-3 text-slate-800  text-sm">
+                                <p>Subscribe your email for newsletter and <br> featured news based on your interest</p>
+                            </li>
+                            <li>
+                                <form>
+                                    <label for="search"
+                                        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                                    <div class="relative">
+
+                                        <input type="search" id="search"
+                                            class="block w-full p-4 ps-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                                            placeholder="Write your email here" required />
+                                        <button type="submit" class="text-slate-600 absolute end-2.5 bottom-4 ">
+                                            <i class="fa-solid fa-paper-plane"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-left mt-8 ">
+                <h4 class="text-sm">©2024 <a href="home.html">Pickbazar.</a> Copyright © REDQ. All rights reserved
+                    worldwide.
+                    <a href="https://redq.io/">
+                        REDQ
+                    </a>
+                </h4>
+            </div>
+        </div>
+    </section>
+    <!--  -->
+
+
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+</body>
+
+</html>
